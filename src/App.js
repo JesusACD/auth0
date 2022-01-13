@@ -5,7 +5,9 @@ import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
 
 function App() {
-	const { isAuthenticated } = useAuth0();
+	const { isAuthenticated, isLoading } = useAuth0();
+
+	if (isLoading) return <h1>Loading...</h1>;
 	return (
 		<div className='App'>
 			<h1>Aplication</h1>
